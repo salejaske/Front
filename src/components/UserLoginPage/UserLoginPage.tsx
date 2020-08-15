@@ -61,6 +61,17 @@ export default class UserLoginPage extends React.Component{
             }
 
             if(res.status === 'ok'){
+                if(res.data.statusCode !== undefined){
+                    let message = '';
+
+                    switch (res.data.statusCode){
+                        case -3001: message = 'Unkwnon e-mail!'; break;
+                        case -3002: message = 'Bad password!'; break;
+                    }
+                    this.setErrorMessage(message);
+
+                    return;
+                }
                 
                 saveToken(res.data.token);
                 saveRefreshToken(res.data.refreshToken);
