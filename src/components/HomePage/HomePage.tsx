@@ -51,8 +51,8 @@ class HomePage extends React.Component {
       });
     }
 
-    private putCategoriesInState(data: ApiCategoryDto[]){
-      const categories: CategoryType[]= data.map(category => {
+    private putCategoriesInState(data?: ApiCategoryDto[]){
+      const categories: CategoryType[] | undefined = data?.map(category => {
         return{
           categoryId: category.categoryId,
           name: category.name,
@@ -69,17 +69,17 @@ class HomePage extends React.Component {
 
     private setLogginState(isLoggedIn: boolean){
       const newState = Object.assign(this.state,{
-          isLoggedIn: isLoggedIn,
+          isUserLoggedIn: isLoggedIn,
       });
       this.setState(newState);
-  }
+    }
 
     render(){
       if (this.state.isUserLoggedIn === false){
         return (
             <Redirect to="/user/login/" />
         );
-    }
+      }
 
       return (
         <Container>
@@ -101,14 +101,14 @@ class HomePage extends React.Component {
 
     private singleCategory(category: CategoryType){
       return(
-        <Col md="3" sm="6" xs="12">
-          <Card>
+        <Col lg="3" md="4" sm="6" xs="12">
+          <Card className="mb-3">
             <Card.Body>
-              <Card.Title>
+              <Card.Title as="p">
                 { category.name }
               </Card.Title>
               <Link to={`/category/${ category.categoryId }`}
-                    className="btn btn-primary">
+                    className="btn btn-primary btn-block btn-sm">
                 Open category
               </Link>
             </Card.Body>
