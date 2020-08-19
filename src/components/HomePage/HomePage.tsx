@@ -86,7 +86,7 @@ class HomePage extends React.Component {
                 <Card>
                     <Card.Body>
                         <Card.Title>
-                            <FontAwesomeIcon icon={ faListAlt } /> Top level categories
+                            <FontAwesomeIcon icon={ faListAlt } /> Our products
                         </Card.Title>
 
                         <Row>
