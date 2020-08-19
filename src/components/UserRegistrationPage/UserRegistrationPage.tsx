@@ -131,7 +131,7 @@ export class UserRegistrationPage extends React.Component{
                                 onChange={ event => this.formInputChanged(event as any) } />
                 </Form.Group>
                 <Form.Group>
-                    <Button variant="primary"
+                    <Button variant="primary" 
                             onClick={ () => this.doRegister() }>
                         Register
                     </Button>
