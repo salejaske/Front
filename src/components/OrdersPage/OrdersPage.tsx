@@ -95,7 +95,7 @@ export default class OrdersPage extends React.Component{
     }
 
     private getOrders(){
-        api('/api/user/cart/orders/', 'get',{})
+        api('/api/user/cart/orders/', 'get',{}, 'user')
         .then((res:ApiResponse) =>{
             const data: OrderDto[] = res.data;
 
@@ -247,6 +247,6 @@ export default class OrdersPage extends React.Component{
                     </Button>
                 </td>
             </tr>
-        ); 
+        );  
     }
 }
