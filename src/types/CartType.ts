@@ -1,7 +1,6 @@
 export default interface CartType{
     cartId: number;
     userId: number;
-    createdAt: string;
     user: any;
     cartArticles: {
         cartArticleId: number;
