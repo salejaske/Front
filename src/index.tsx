@@ -8,7 +8,6 @@ import 'jquery/dist/jquery.js';
 import 'popper.js/dist/popper.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
-import { MainMenu, MainMenuItem } from './components/MainMenu/MainMenu';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import ContactPage from './components/ContactPage/ContactPage';
 import UserLoginPage from './components/UserLoginPage/UserLoginPage';
@@ -18,20 +17,10 @@ import OrdersPage from './components/OrdersPage/OrdersPage';
 import AdministratorLoginPage from './components/AdministratorLoginPage/AdministratorLoginPage';
 import AdministratorDashboard from './components/AdministratorDashboard/AdministratorDashboard';
 
-const menuItems = [
-  new MainMenuItem("Home", "/"),
-  new MainMenuItem("Contact", "/contact/"),
-  new MainMenuItem("Register", "/user/register/"),
-  new MainMenuItem("My Orders", "/user/orders/"),
-  new MainMenuItem("User log in", "/user/login/"),
-  new MainMenuItem("Administrator log in", "/administrator/login/"),
 
-  
-];
  
 ReactDOM.render(
-  <React.StrictMode>
-    <MainMenu items={menuItems}></MainMenu>
+  <React.StrictMode> 
     <HashRouter>
       <Switch>
         <Route exact path="/" component={ HomePage } />
@@ -43,7 +32,7 @@ ReactDOM.render(
         <Route path="/administrator/login" component={ AdministratorLoginPage } />
         <Route path="/administrator/dashboard" component={ AdministratorDashboard } />
       </Switch>
-    </HashRouter>
+    </HashRouter> 
 
   </React.StrictMode>,
   document.getElementById('root')
