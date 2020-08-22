@@ -1,9 +1,9 @@
 
 import { Container, Card, Table, Button, Modal, Form, Alert, Row, Col } from 'react-bootstrap';
 import React from 'react';
-import { faListAlt, faPlus, faEdit, faSave } from '@fortawesome/free-solid-svg-icons';
+import { faListAlt, faPlus, faEdit, faSave, faImages } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import api, {ApiResponse, apiFile } from '../../api/api';
 import RoledMainMenu from '../RoledMainMenu/RoledMainMenu';
 import ArticleType from '../../types/ArticleType';
@@ -383,6 +383,10 @@ class AdministratorDashboardArticle extends React.Component {
                                   <td className="text-right">{ article.price }</td>
                                   <td className="text-center">
                                     
+                                    <Link to={ "/administrator/dashboard/photo/" + article.articleId }
+                                          className="btn btn-sm btn-info mr-3">
+                                            <FontAwesomeIcon icon={faImages} /> Photos
+                                    </Link>
 
                                     <Button variant="info" size="sm">
                                             onClick={ () => this.showEditModal(article) }
