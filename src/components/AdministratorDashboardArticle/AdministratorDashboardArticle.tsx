@@ -355,7 +355,7 @@ class AdministratorDashboardArticle extends React.Component {
 
                         <Table hover size="sm" bordered>
                           <thead>
-                            <td>
+                            <tr>
                               <th colSpan={5}></th>
                               <th className="text-center">
                                 <Button variant="primary" size="sm">
@@ -363,7 +363,7 @@ class AdministratorDashboardArticle extends React.Component {
                                     <FontAwesomeIcon icon={faPlus} /> Add
                                 </Button>
                               </th>
-                            </td>
+                            </tr>
                             <tr>
                               <th className="text-right">ID</th>
                               <th>Name</th>
