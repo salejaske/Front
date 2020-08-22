@@ -1,32 +1,31 @@
-export default class ArticleType{
-    articleId?: number;
-    name?: string;
-    excerpt?: string;
-    description?: string;
-    imageUrl?: string;
-    price?: number;
-
-    status?: "dostupno" | "nije dostupno";
-    articleFeatures?: {
+export default interface ApiArticleDto {
+    articleId: number;
+    name: string;
+    categoryId: number;
+    excerpt: string;
+    description: string;
+    status: "dostupno" | "nije dostupno";
+    articleFeatures: {
         articleFeatureId: number;
         featureId: number;
         value: string;
     }[];
-    features?: {
+    features: {
         featureId: number;
         name: string;
     }[];
-    articlePrices?: {
+    articlePrices: {
         articlePriceId: number;
         price: number;
     }[];
-    photos?: {
+    photos: {
         photoId: number;
         imagePath: string;
     }[];
-    categoryId?: number;
+    
     category?: {
         name: string;
     };
+
 
 }

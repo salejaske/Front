@@ -105,7 +105,7 @@ class AdministratorDashboardFeature extends React.Component<AdministratorDashboa
           
           })
         ));
-  }
+      }
 
       
     
